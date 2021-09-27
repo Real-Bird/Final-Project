@@ -1,0 +1,9 @@
+1. view.py, urls.py 추가
+  - ajax 위한 function, path 추가
+  - save_point, view_point
+
+2. landing.html 추가
+  - 진단 시 save_point ajax 추가
+
+3. navbar.html
+  - view_point ajax 추가

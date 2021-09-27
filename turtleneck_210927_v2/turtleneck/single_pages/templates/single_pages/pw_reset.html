@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+<head>
+    <title>{%block head_title %} Login {% endblock %} </title>
+    <link rel="stylesheet" href="{% static 'mypage/bootstrap/bootstrap.min.css' %}" media="screen">
+    <script src="https://kit.fontawesome.com/fb58eed872.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    {% include 'blog/navbar.html' %}
+
+    <div class="container my-3">
+        <div class="row">
+            <div class="col-md-8 col-lg-9" id="main-area">
+                {% block content %}
+
+                <div class = 'container'>
+                    <h1> Reset Password </h1>
+                    
+                    <form method="POST" action="{% url 'passwordReset' %}">
+                        {% csrf_token %}
+                        E-mail Address:
+                        <br>
+                        <input name='E-mail' type='email'>
+                        <br>
+                        New Password:
+                        <br>
+                        <input name='new_pw1' type='password'>
+                        <br>
+                        Verify Password:
+                        <br>
+                        <input name="new_pw2" type="password">
+                        <br><br>
+                        <input type="submit" class="btn btn-primary" value="Reset">
+                    </form>
+                </div>
+
+                {% endblock %}
+
+                <br><br>
+                <h3>{{error_message}}</h3>
+
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class = "fixed-bottom">
+    {% include 'blog/footer.html' %}
+    </div>

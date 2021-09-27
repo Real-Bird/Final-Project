@@ -1,0 +1,12 @@
+1. view.py, urls.py
+  - 패스워드 변경 추가
+  - 가입 시 암호화 추가
+
+2. single_pages/pw_reset.html 추가
+
+3. settings.py
+  - 암호화 path 추가
+  - 세션 만료 추가(1시간, 브라우저 종료 시)
+
+4. mypage/base.html
+  - point ajax 추가
