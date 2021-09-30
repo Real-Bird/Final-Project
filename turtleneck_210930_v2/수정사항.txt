@@ -1,0 +1,59 @@
+21.09.30
+1. mypage/mypage.html, views.py
+  - ajax 삭제, db정보 렌더링
+------------------------------------------------------
+21.09.29
+1. blog/post_list.html, views.py
+    - pagination 구현(한페이지당 5개)
+
+2. my post도 한페이지당 5개씩 나오게까지는 구현
+--------------------------------------------------------
+21.09.28
+1. my post/base.html, views.py
+   - my post 들어가면 내가 쓴 글에 맞게 카테고리 표시
+
+2. notice/base.html
+   - my points, 카테고리 삭제
+--------------------------------------------------------
+21.09.27
+1. single_pages/landing.html
+  - 자동 스크롤 추가
+  - 자세, 횟수 표시 수정
+
+2. blog/base.html
+  - my points 삭제
+
+3. navbar.html
+  - 모달 사이즈 축소 및 가운데 정렬
+
+4. mypage/base.html
+  - point ajax 삭제
+
+5. mypage/mypage.html
+  - name, E-mail, points ajax 추가
+--------------------------------------------------------
+21.09.15
+1. view.py, urls.py
+  - 패스워드 변경 추가
+  - 가입 시 암호화 추가
+
+2. single_pages/pw_reset.html 추가
+
+3. settings.py
+  - 암호화 path 추가
+  - 세션 만료 추가(1시간, 브라우저 종료 시)
+
+4. mypage/base.html
+  - point ajax 추가
+------------------------------------------------------
+21.09.14
+1. view.py, urls.py 추가
+  - ajax 위한 function, path 추가
+  - save_point, view_point
+
+2. landing.html 추가
+  - 진단 시 save_point ajax 추가
+
+3. navbar.html
+  - view_point ajax 추가
+------------------------------------------------------

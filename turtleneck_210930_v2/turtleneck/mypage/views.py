@@ -11,14 +11,19 @@ from django.shortcuts import render, redirect
 # from django.shortcuts import get_object_or_404
 # from .models import Category, Tag , MyPost
 from blog.models import Post
-
+from blog.views import MyPostList
 # from django.db.models import Q
 
 
 def mypage(request):
     u = User.objects.filter(user_name = request.session['loginuser'] ) 
-    user_name = u.user_name
-    user_mail = u.user_id
+
+    user = User.objects.get(user_name=request.session['loginuser'])
+
+    user_name = user.user_name
+    user_mail = user.user_id
+    user_points = user.user_point
+    
     # Post.objects = Post.objects.filter(author = User.objects[0].id )
     my_post = Post.objects.filter(author = u[0].id).order_by('-pk')[:5]
     
@@ -28,9 +33,11 @@ def mypage(request):
         {
             'user_name' : user_name,
             'user_mail' : user_mail,
+            'user_points' : user_points,
             'my_post': my_post,
         }
     )
+    
 
 
 # class MyPostUpdate(LoginRequiredMixin, UpdateView):
